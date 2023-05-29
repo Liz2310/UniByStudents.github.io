@@ -53,10 +53,10 @@ sendData = () => {
     .then(response => response.json())
     .then(result => {
         if(result['statusCode'] == 200){
-            // getData("lol");
+            form.reset();
+            submitResponse.innerHTML = 'Form submitted. Success!';
         }else{
-            // submitResponse.innerHTML = 'Error! Please try again.';
-            console.log(result);
+            submitResponse.innerHTML = 'Error! Please try again.';
         }
      })
     .catch(error => console.log('error', error));
