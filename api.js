@@ -40,12 +40,11 @@ sendData = () => {
     fetch(
         'https://fpajmmjq2m.execute-api.us-east-1.amazonaws.com/dev/services/events', 
         {
-            method: "PUT",
+            method: "POST",
             body: JSON.stringify({
                 data
             }),
             headers: {
-                'X-Forwarded-Host' : 'https://d1d0eflnejisbs.cloudfront.net/',
                 'Content-Type': 'application/json',
                 'auth': api_access_token
                 }
