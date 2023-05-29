@@ -1,0 +1,101 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Events</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="../assets/css/main.css" />
+
+	</head>
+	<body class="is-preload no-sidebar">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<div id="header-wrapper">
+					<header id="header" class="container">
+
+						<!-- Logo -->
+							<div id="logo">
+								<h1><a href="../home.html">UniByStudents</a></h1>
+								<!-- <span>by HTML5 UP</span> -->
+							</div>
+
+						<!-- Nav -->
+						<nav id="nav">
+							<ul>
+								<li>
+									<!-- <a id="showDialog">Post Event</a> -->
+								</li>
+ 								<button id="showDialog" onclick="show_modal()">Post Event</button>
+							</ul>
+						</nav>
+
+					</header>
+				</div>
+
+				<!-- Modal -->
+				
+				<dialog id="favDialog">
+					<div id="coverDialog">
+						<h3 id="dialog-label">Tell everybody about your event!</h3>
+						<form method="POST">
+							<label for="title">Title:</label>
+							<input type="text" id="title" name="title" maxlength="60">
+							<label for="date">Date:</label>
+							<input type="date" id="date" name="date"> <br>
+
+							<label for="start_time">Start Time:</label>
+							<input type="time" id="start_time" name="start_time">
+							<label for="end_time">End Time:</label>
+							<input type="time" id="end_time" name="end_time">
+
+							<label for="details">Details:</label>
+							<textarea id="details" name="details" rows="1" cols="33" style="resize: none;"></textarea>
+							<h4 id="response"></h4>
+							<p></p>
+							<button onclick="sendData()" id="submit" type="submit" style="height:30px; width:80px; font-size:15px; display: block; padding: 0em !important;">Submit</button>
+						</form>
+					</div>
+				</dialog>
+				
+
+
+			<!-- Main -->
+				<div id="main-wrapper">
+					<div class="container">
+						<div id="content">
+
+
+							<!-- Content -->
+								<article>
+
+									<h2>See what's new!</h2>
+
+									<!-- Box -->
+									{% for post in posts %}
+									  <section class="box event" style="padding-bottom: 0.1em;">
+											<div class="inner" slot="">
+											<b>Event:</b> {{ post[0] | safe }} <br>
+												<b>By:</b> {{ post[1] | safe }} <br>
+												<b>What:</b> {{ post[2] | safe }} <br>
+												<b>When:</b> {{ post[3] | safe }} from {{ post[4] | safe }} to {{ post[5] | safe }}
+												<button style="display: block; margin-left: auto;margin-right: 0;height:30px; width:100px; font-size:13px; padding: 0em !important;" onclick="sen">Edit Post</button>
+											</div>
+									</section>
+									{% endfor %}
+								</article>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		<!-- Scripts -->
+				<script src="../assets/js/jquery.min.js"></script>
+				<script src="../assets/js/jquery.dropotron.min.js"></script>
+				<script src="../assets/js/browser.min.js"></script>
+				<script src="../assets/js/breakpoints.min.js"></script>
+				<script src="../assets/js/util.js"></script>
+				<script src="../assets/js/main.js"></script>
+				<script src="../api.js"></script>
+	</body>
+</html>

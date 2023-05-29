@@ -1,0 +1,254 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>UniByStudents CETYS Tijuana</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        <link rel="stylesheet" href="./assets/css/main.css" />
+    </head>
+    <body class="is-preload homepage">
+        <div id="page-wrapper">
+
+            <!-- Header -->
+                <div id="header-wrapper">
+                    <header id="header" class="container">
+
+                        <!-- Logo -->
+                            <div id="logo">
+                                <h1><a href="home.html">UniByStudents</a></h1>
+                                <!-- <span>by HTML5 UP</span> -->
+                            </div>
+                    </header>
+                </div>
+
+            <!-- Banner -->
+                <div id="banner-wrapper">
+                    <div id="banner" class="box container">
+                        <div class="row">
+                            <div class="col-7 col-12-medium">
+                                <h2>Hi fellow students from CETYS </h2>
+                                <p>This is webpage where you are connected to other students, here you may see the top news or events going on inside or outside campus, as well as what recommendations are made by other classmates. </p>
+                            </div>
+                            <div class="col-5 col-12-medium">
+
+                                  </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            <!-- Features -->
+                            
+                <style>
+                .fixed-height-container {
+                    height: 600px; /* Adjust the height as per your preference */
+                }
+                </style>
+
+                <div id="features-wrapper">
+                <div class="container">
+                    <div class="row">
+                    <div class="col-3 col-12-medium">
+                        <!-- Events -->
+                        <section class="box feature fixed-height-container">
+                        <a class="image featured"><img src="images/eventos.png" alt="" /></a>
+                        <div class="inner">
+                            <header>
+                            <h2>Events</h2>
+                            </header>
+                            <p>See what events are going on inside and outside campus related to either school events or student reunions</p>
+                        </div>
+                        </section>
+
+                        <button onclick="getData('lol')" type="button">Send Message</button>
+                    </div>
+
+                    <div class="col-3 col-12-medium">
+                        <!-- Recommendation -->
+                        <section class="box feature fixed-height-container">
+                        <a href="https://vgle8yt2wc.execute-api.us-east-1.amazonaws.com/dev/services/recommendation" class="image featured"><img src="images/course.jpg" alt="" /></a>
+                        <div class="inner">
+                            <header>
+                            <h2>Course Recommendation</h2>
+                            </header>
+                            <p>Here you can find the books, courses, articles... that have been more useful to the students on each grade, as well as some reviews.</p>
+                        </div>
+                        </section>
+                    </div>
+
+                    <div class="col-3 col-12-medium">
+                        <!-- Opportunities -->
+                        <section class="box feature fixed-height-container">
+                        <a href="https://5ak45o0qe9.execute-api.us-east-1.amazonaws.com/dev/services/opportunities" class="image featured"><img src="images/opportunities.jpg" alt="" /></a>
+                        <div class="inner">
+                            <header>
+                            <h2>Opportunities</h2>
+                            </header>
+                            <p>See the internship and social service opportunities that are coming up for all the students according to your interests.</p>
+                        </div>
+                        </section>
+                    </div>
+
+                    <div class="col-3 col-12-medium">
+                        <!-- Contact -->
+                        <section class="box feature fixed-height-container">
+                        <a href="https://5ak45o0qe9.execute-api.us-east-1.amazonaws.com/dev/services/opportunities" class="image featured"><img src="images/groups.png" alt="" /></a>
+                        <div class="inner">
+                            <header>
+                            <h2>Student Group Contact</h2>
+                            </header>
+                            <p>See what vacancies are available in the student groups and who you should contact.</p>
+                        </div>
+                        </section>
+                    </div>
+                    </div>
+                </div>
+
+              </div>
+
+                  </div>
+
+                                <!-- Contact -->
+                                    <!-- <section class="widget contact last">
+                                        <h3>Contact Us</h3>
+                                        <ul>
+                                            <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+                                            <li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+                                            <li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+                                            <li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
+                                            <li><a href="#" class="icon brands fa-pinterest"><span class="label">Pinterest</span></a></li>
+                                        </ul>
+                                        <p>1234 Fictional Road<br />
+                                        Nashville, TN 00000<br />
+                                        (800) 555-0000</p>
+                                    </section> -->
+
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div id="copyright">
+                                    <ul class="menu">
+                                        <li>&copy; Mismosas Team</li><li>Cloud Computing:</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </footer>
+                </div>
+
+            </div>
+
+        <!-- Scripts -->
+
+            <script src="assets/js/jquery.min.js"></script>
+            <script src="assets/js/jquery.dropotron.min.js"></script>
+            <script src="assets/js/browser.min.js"></script>
+            <script src="assets/js/breakpoints.min.js"></script>
+            <script src="assets/js/util.js"></script>
+            <script src="assets/js/main.js"></script>
+            <script src="api.js"></script>
+
+            <script text="text/javascript">
+                function show_modal(){
+                    const favDialog = document.getElementById('favDialog');
+                    const confirmBtn = favDialog.querySelector('submit');
+
+                    favDialog.showModal();
+
+                    favDialog.addEventListener('click', function (event) {
+                        var rect = favDialog.getBoundingClientRect();
+                        var isInDialog=(rect.top <= event.clientY && event.clientY <= rect.top + rect.height && rect.left <= event.clientX && event.clientX <= rect.left + rect.width);
+                        if (!isInDialog) {
+                            favDialog.close();
+                        }
+                    });
+
+                    confirmBtn.addEventListener('click', (event) => {
+                        event.preventDefault();
+                        favDialog.close();
+                    });
+                }
+            </script>
+
+            <script>
+  
+                // sendData = () => {
+
+                // const apiUrl = window.location.href;
+                // const apiReplacedURL = apiUrl.replace('#', '&')
+                // const apiFinalURL = new URLSearchParams(apiReplacedURL);
+                // var api_access_token = apiFinalURL.get('id_token')
+
+                // const form = document.querySelector('form');
+                // const submitResponse = document.querySelector('#response');
+
+                // let data = {};
+                // Array.from(form).map(input => (data[input.id] = input.value));
+                // console.log('Sending: ', JSON.stringify(data));
+                // // submitResponse.innerHTML = 'Sending...'
+
+                // fetch(
+                //     'https://fpajmmjq2m.execute-api.us-east-1.amazonaws.com/dev/services/events', 
+                //     {
+                //         method: "POST", 
+                //         body: JSON.stringify({
+                //             data
+                //         }),
+                //         headers: {
+                //             'Accept' : 'application/json',
+                //             'Content-Type': 'application/json',
+                //             'auth': api_access_token
+                //             }
+                //     }
+                // )
+                // .then(response => response.json())
+                // .then(result => {
+                //     if(result['statusCode'] == 200){
+                //         // getData("lol");
+                //     }else{
+                //         // submitResponse.innerHTML = 'Error! Please try again.';
+                //         console.error(response);
+                //     }
+                //  })
+                // .catch(error => console.log('error', error));
+
+
+
+
+                // form.onsubmit = e => {
+                //     e.preventDefault();
+
+                //     // Capture the form data
+                //     let data = {};
+                //     Array.from(form).map(input => (data[input.id] = input.value));
+                //     console.log('Sending: ', JSON.stringify(data));
+                //     submitResponse.innerHTML = 'Sending...'
+
+                    
+
+                //     // Create the AJAX request
+                //     var xhr = new XMLHttpRequest();
+                //     xhr.open(form.method, formURL, true);
+                //     xhr.setRequestHeader('Accept', 'application/json; charset=utf-8');
+                //     xhr.setRequestHeader('auth', api_access_token);
+                //     xhr.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
+
+                //     // Send the collected data as JSON
+                //     xhr.send(JSON.stringify(data));
+
+                //     xhr.onloadend = response => {
+                //     if (response.target.status === 200) {
+                //         form.reset();
+                //         submitResponse.innerHTML = 'Form submitted. Success!';
+                //     } else {
+                //         submitResponse.innerHTML = 'Error! Please try again.';
+                //         console.error(JSON.parse(response));
+                //     }
+                //     };
+                // };
+                // }
+            </script>
+
+    </body>
+</html>
