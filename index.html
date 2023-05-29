@@ -1,62 +1,10 @@
 <!DOCTYPE HTML>
 <html>
     <body>
-        <!-- <form method="POST"> -->
-            <!-- <h2 class="text-center"><strong>Create</strong> an account.</h2>
-            <input type="text" id="name" placeholder="Name">
-            <input type="email" id="email" placeholder="Email">
-            <input type="password" id="password" placeholder="Password ">
-            <br>
-            <br>
-            <button id="submit" type="submit" style="height:30px; width:80px; font-size:15px; display: block; padding: 0em !important;">Submit</button>
-            <br>
-            <a href="#" class="already">You already have an account? Login here.</a>
-            <h4 id="response"></h4> -->
-
-        <!-- </form> -->
     <h1>
 		<a href="https://unibystudents.auth.us-east-1.amazoncognito.com/login?client_id=2bm69721kdsv75v3f461vtk2kt&response_type=token&scope=email+openid+profile&redirect_uri=https%3A%2F%2Fliz2310.github.io%2Fhome.html">
 			Sign Up or Login!
 		</a>
 	</h1>
-	</body>
-
-    <script>
-        (() => {
-				  const form = document.querySelector('form');
-                  const submitResponse = document.querySelector('#response');
-				  const formURL = 'https://jo4rf9iv3h.execute-api.us-east-1.amazonaws.com/dev/register';
-
-				  form.onsubmit = e => {
-					e.preventDefault();
-
-					// Capture the form data
-					let data = {};
-					Array.from(form).map(input => (data[input.id] = input.value));
-					console.log('Sending: ', JSON.stringify(data));
-					submitResponse.innerHTML = 'Sending...'
-
-					// Create the AJAX request
-					var xhr = new XMLHttpRequest();
-					xhr.open(form.method, formURL, true);
-					xhr.setRequestHeader('Accept', 'application/json; charset=utf-8');
-					xhr.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
-
-					// Send the collected data as JSON
-					xhr.send(JSON.stringify(data));
-
-					xhr.onloadend = response => {
-					  if (response.target.status === 200) {
-						form.reset();
-						submitResponse.innerHTML = 'Form submitted. Success!';
-					  } else {
-                        console.log(response.target.status);
-						submitResponse.innerHTML = 'Error! Please try again.';
-						console.log(response);
-                        // console.error(JSON.parse(response));
-					  }
-					};
-				  };
-				})();
-    </script>
+	</body>                  
 </html>
