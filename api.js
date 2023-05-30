@@ -36,15 +36,14 @@ sendData = () => {
     submitResponse.innerHTML = 'Sending...'
 
     fetch(
-        'https://fpajmmjq2m.execute-api.us-east-1.amazonaws.com/dev/services/events', 
+        'https://fpajmmjq2m.execute-api.us-east-1.amazonaws.com/dev/services/events-post', 
         {
-            method: "GET",
+            method: "POST",
             body: JSON.stringify({
                 data
             }),
             headers: {
                 'Content-Type': 'application/json',
-                'auth': api_access_token
                 }
         }
     )
