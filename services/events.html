@@ -129,6 +129,7 @@
 
 						let data = {};
 						Array.from(form).map(input => (data[input.id] = input.value));
+						console.log(data);
 						console.log('Sending: ', JSON.stringify(data));
 						submitResponse.innerHTML = 'Sending...'
 

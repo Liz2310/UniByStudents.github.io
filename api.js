@@ -17,9 +17,14 @@ getData = (random_string) => {
                     }
                 }
     )
-    .then((response) => {
-        return response
-})
+    .then(response => response.text())
+    .then(html => {
+        console.log(html);
+        document.body.innerHTML = html;
+    })
+    .catch(error => {
+        console.error("Error: ", error);
+    })
 }
 
 // sendData = () => {
