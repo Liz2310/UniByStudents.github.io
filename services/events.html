@@ -94,34 +94,11 @@
 				<script src="../assets/js/jquery.dropotron.min.js"></script>
 				<script src="../assets/js/browser.min.js"></script>
 				<script src="../assets/js/breakpoints.min.js"></script>
-				<script src="../assets/js/util.js"></script>
+				<script src="../assets/js/til.js"></script>
 				<script src="../assets/js/main.js"></script>
 				<script src="../api.js"></script>
 
-
-				<script text="text/javascript">
-					function show_modal(){
-						const favDialog = document.getElementById('favDialog');
-						const confirmBtn = favDialog.querySelector('submit');
-	
-						favDialog.showModal();
-	
-						favDialog.addEventListener('click', function (event) {
-							var rect = favDialog.getBoundingClientRect();
-							var isInDialog=(rect.top <= event.clientY && event.clientY <= rect.top + rect.height && rect.left <= event.clientX && event.clientX <= rect.left + rect.width);
-							if (!isInDialog) {
-								favDialog.close();
-							}
-						});
-	
-						confirmBtn.addEventListener('click', (event) => {
-							event.preventDefault();
-							favDialog.close();
-						});
-					}
-				</script>
-
-				<script text="text/javascript">
+				<!-- <script text="text/javascript">
 					sendData = () => {
 
 						const form = document.querySelector('form');
@@ -155,8 +132,7 @@
 							}
 						})
 						.catch(error => console.log('error', error));
-						}
-
-				</script>
+						} -->
+				<!-- </script> -->
 	</body>
 </html>
