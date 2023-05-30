@@ -47,36 +47,35 @@ function show_modal(){
     });
 }
 
-// sendData = () => {
+sendData = () => {
+    const form = document.querySelector('form');
+    const submitResponse = document.querySelector('#response');
 
-//     const form = document.querySelector('form');
-//     const submitResponse = document.querySelector('#response');
+    let data = {};
+    Array.from(form).map(input => (data[input.id] = input.value));
+    console.log('Sending: ', JSON.stringify(data));
+    submitResponse.innerHTML = 'Sending...'
 
-//     let data = {};
-//     Array.from(form).map(input => (data[input.id] = input.value));
-//     console.log('Sending: ', JSON.stringify(data));
-//     submitResponse.innerHTML = 'Sending...'
-
-//     fetch(
-//         'https://fpajmmjq2m.execute-api.us-east-1.amazonaws.com/dev/services/events-post', 
-//         {
-//             method: "POST",
-//             body: JSON.stringify({
-//                 data
-//             }),
-//             headers: {
-//                 'Content-Type': 'application/json',
-//                 }
-//         }
-//     )
-//     .then(response => response.json())
-//     .then(result => {
-//         if(result['statusCode'] == 200){
-//             form.reset();
-//             submitResponse.innerHTML = 'Form submitted. Success!';
-//         }else{
-//             submitResponse.innerHTML = 'Error! Please try again.';
-//         }
-//      })
-//     .catch(error => console.log('error', error));
-// }
+    fetch(
+        'https://fpajmmjq2m.execute-api.us-east-1.amazonaws.com/dev/services/events-post', 
+        {
+            method: "POST",
+            body: JSON.stringify({
+                data
+            }),
+            headers: {
+                'Content-Type': 'application/json',
+                }
+        }
+    )
+    .then(response => response.json())
+    .then(result => {
+        if(result['statusCode'] == 200){
+            form.reset();
+            submitResponse.innerHTML = 'Form submitted. Success!';
+        }else{
+            submitResponse.innerHTML = 'Error! Please try again.';
+        }
+     })
+    .catch(error => console.log('error', error));
+}
