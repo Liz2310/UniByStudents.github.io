@@ -35,12 +35,12 @@ sendData = () => {
     let data = {};
     Array.from(form).map(input => (data[input.id] = input.value));
     console.log('Sending: ', JSON.stringify(data));
-    // submitResponse.innerHTML = 'Sending...'
+    submitResponse.innerHTML = 'Sending...'
 
     fetch(
         'https://fpajmmjq2m.execute-api.us-east-1.amazonaws.com/dev/services/events', 
         {
-            method: "POST",
+            method: "GET",
             body: JSON.stringify({
                 data
             }),
