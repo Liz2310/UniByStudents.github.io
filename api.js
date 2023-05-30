@@ -27,8 +27,6 @@ getData = (random_string) => {
 
 sendData = () => {
 
-    var api_access_token = apiFinalURL.get('id_token');
-
     const form = document.querySelector('form');
     const submitResponse = document.querySelector('#response');
 
