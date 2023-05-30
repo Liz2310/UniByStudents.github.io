@@ -18,11 +18,8 @@ getData = (random_string) => {
                 }
     )
     .then((response) => {
-        return response.text();
-    })
-    .then((html) => {
-        document.body.innerHTML = html     
-    });
+        return response
+})
 }
 
 sendData = () => {
